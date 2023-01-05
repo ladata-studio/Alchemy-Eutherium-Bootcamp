@@ -22,8 +22,8 @@ export const AlchemyContext = createContext();
 const App = ({ children }) => {
   return (
     <AlchemyContext.Provider value={alchemy}>
-      <GlobalStyle />
       <Outlet />
+      <GlobalStyle />
       {children}
     </AlchemyContext.Provider>
   );

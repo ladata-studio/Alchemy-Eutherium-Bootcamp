@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ETH Blockchain Explorer",
+  "name": "Ethereum Blockchain Explorer",
   "icons": [],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#070b0d"
 }

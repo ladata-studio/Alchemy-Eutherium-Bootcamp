@@ -1,18 +1,14 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Container from '../../components/Container/Container';
 import truncateString from '../../utils/truncateString';
 
-export async function loader({ params }) {
-  return { hash: params.txHash };
-}
-
 const Transaction = () => {
-  const tx = useLoaderData();
+  const { tx } = useParams();
 
   return (
     <Container>
-      <h1>Transaction {truncateString(tx.hash, 22)}</h1>
+      <h1>Transaction {truncateString(tx, 22)}</h1>
       <Link to="/">{`←`} Main page</Link>
     </Container>
   );
