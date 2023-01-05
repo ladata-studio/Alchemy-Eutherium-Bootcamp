@@ -1,6 +1,6 @@
 import { Alchemy, Network } from 'alchemy-sdk';
 import { createContext } from 'react';
-import Main from './pages/Main/Main';
+import { Outlet } from 'react-router-dom';
 import { GlobalStyle } from './styles';
 
 // Refer to the README doc for more information about using API
@@ -19,13 +19,14 @@ const settings = {
 const alchemy = new Alchemy(settings);
 export const AlchemyContext = createContext();
 
-function App() {
+const App = ({ children }) => {
   return (
     <AlchemyContext.Provider value={alchemy}>
       <GlobalStyle />
-      <Main />
+      <Outlet />
+      {children}
     </AlchemyContext.Provider>
   );
-}
+};
 
 export default App;

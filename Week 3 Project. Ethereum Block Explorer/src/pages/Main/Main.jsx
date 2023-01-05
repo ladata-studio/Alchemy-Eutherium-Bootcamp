@@ -63,12 +63,12 @@ const Main = () => {
           <Block>
             <Title>Latest Blocks</Title>
             <LatestBlocks blocks={latestBlocks} />
-            <Button href="/blocks">All blocks</Button>
+            <Button to="/blocks">All blocks</Button>
           </Block>
           <Block>
             <Title>Latest Transactions</Title>
             <LatestTransactions transactions={latestTxs} />
-            <Button href="/transactions">All transactions</Button>
+            <Button to="/transactions">All transactions</Button>
           </Block>
         </BlockGroup>
       )}
