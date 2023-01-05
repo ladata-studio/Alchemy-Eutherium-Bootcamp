@@ -1,7 +1,7 @@
 import { Alchemy, Network } from 'alchemy-sdk';
 import { createContext } from 'react';
-import { Outlet } from 'react-router-dom';
 import { GlobalStyle } from './styles';
+import { AppRouter } from './AppRouter';
 
 // Refer to the README doc for more information about using API
 // keys in client-side code. You should never do this in production
@@ -19,12 +19,11 @@ const settings = {
 const alchemy = new Alchemy(settings);
 export const AlchemyContext = createContext();
 
-const App = ({ children }) => {
+const App = () => {
   return (
     <AlchemyContext.Provider value={alchemy}>
-      <Outlet />
       <GlobalStyle />
-      {children}
+      <AppRouter />
     </AlchemyContext.Provider>
   );
 };

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button } from '../../components/Button/buttonStyles';
-import { Loading } from './mainSkeletonStyles';
+import LatestBlockSkeleton from '../../components/Latest/LatestBlockSkeleton';
+import LatestTransactionSkeleton from '../../components/Latest/LatestTransactionSkeleton';
+import { Table, TableWrap } from '../../components/Latest/tableStyles';
 import { Block, BlockGroup, Title } from './mainStyles';
 
 const MainSkeleton = () => {
@@ -8,13 +10,26 @@ const MainSkeleton = () => {
     <BlockGroup>
       <Block>
         <Title>Latest Blocks</Title>
-        <Loading>Loading...</Loading>
-        <Button>All blocks</Button>
+        <TableWrap>
+          <Table type="block">
+            {[...Array(10)].map((el, index) => (
+              <LatestBlockSkeleton key={index} />
+            ))}
+          </Table>
+        </TableWrap>
+        <Button to="/blocks">All blocks</Button>
       </Block>
-      <Block className="main__column">
+
+      <Block>
         <Title>Latest Transactions</Title>
-        <Loading>Loading...</Loading>
-        <Button>All transactions</Button>
+        <TableWrap>
+          <Table type="tx">
+            {[...Array(10)].map((el, index) => (
+              <LatestTransactionSkeleton key={index} />
+            ))}
+          </Table>
+        </TableWrap>
+        <Button to="/transactions">All transactions</Button>
       </Block>
     </BlockGroup>
   );
